@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PaypalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +26,12 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+route::get('createpaypal',[PaypalController::class,'createpaypal'])->name('createpaypal');
+
+route::get('processPaypal',[PaypalController::class,'processPaypal'])->name('processPaypal');
+
+route::get('processSuccess',[PaypalController::class,'processSuccess'])->name('processSuccess');
+
+route::get('processCancel',[PaypalController::class,'processCancel'])->name('processCancel');
